@@ -63,6 +63,26 @@ public class AddressBook {
         System.out.print("\nPone Number : " + object.getPhonenumber());
         System.out.print("\nE-mail      : " + object.getEmail());
         System.out.print("\nZip         : " + object.getZip());
+
+
+        System.out.print("\nDo you want to delete? press 1 For Delet / 2 for Not: ");
+        char deleteOption = scanner2.next().charAt(0);
+        if (deleteOption == '1') {
+            deletContacts();
+        }
+
+    }
+    public static void deletContacts(){
+        System.out.print("\n Contacts Deleted Sucessfully");
+        System.out.print("\nFirst Name  : " );
+        System.out.print("\nLast Name   : " );
+        System.out.print("\nAddress     : " );
+        System.out.print("\nCity        : " );
+        System.out.print("\nState       : ");
+        System.out.print("\nPone Number : " );
+        System.out.print("\nE-mail      : " );
+        System.out.print("\nZip         : " );
+
     }
 }
 
