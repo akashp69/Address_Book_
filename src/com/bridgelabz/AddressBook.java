@@ -12,7 +12,7 @@ public class AddressBook {
 
 
     /**
-     *This Method is Used For Enter Details in Contacts
+     * This Method is Used For Enter Details in Contacts
      */
     public void contactDetail() {
         System.out.println("Enter Details for Creating Contacts");
@@ -31,16 +31,16 @@ public class AddressBook {
         System.out.println("Enter E-mail");
         object.setEmail(scanner.next());
         System.out.println("Check Added Contact Details");
-        System.out.println("\n First Name ="+object.getFirstname());
-        System.out.println("\n Last Name ="+object.getLastname());
-        System.out.println("\n Address ="+object.getAddress());
-        System.out.println("\n State ="+object.getState());
-        System.out.println("\n Zip ="+object.getZip());
-        System.out.println("\n Phone Number  ="+object.getPhonenumber());
-        System.out.println("\n E-mail id ="+object.getEmail());
-    /**
-    *Using For Edit details from Existing Contact that Present in Contact
-    */
+        System.out.println("\n First Name =" + object.getFirstname());
+        System.out.println("\n Last Name =" + object.getLastname());
+        System.out.println("\n Address =" + object.getAddress());
+        System.out.println("\n State =" + object.getState());
+        System.out.println("\n Zip =" + object.getZip());
+        System.out.println("\n Phone Number  =" + object.getPhonenumber());
+        System.out.println("\n E-mail id =" + object.getEmail());
+        /**
+         *Using For Edit details from Existing Contact that Present in Contact
+         */
         String newName;
         Scanner scanner2 = new Scanner(System.in);
         System.out.print("\nEnter the First name for update existing contact : ");
@@ -51,9 +51,9 @@ public class AddressBook {
             object.setFirstname(newName);
         } else
             System.out.print("\ncouldn't find the contact..");
-    /**
-    *After Editing Showing Details
-    */
+        /**
+         *After Editing Showing Details
+         */
         System.out.print("\n-----------------");
         System.out.print("\nFirst Name  : " + object.getFirstname());
         System.out.print("\nLast Name   : " + object.getLastname());
@@ -70,19 +70,35 @@ public class AddressBook {
         if (deleteOption == '1') {
             deletContacts();
         }
+        addContacts();
 
     }
-    public static void deletContacts(){
+
+    public static void deletContacts() {
         System.out.print("\n Contacts Deleted Sucessfully");
-        System.out.print("\nFirst Name  : " );
-        System.out.print("\nLast Name   : " );
-        System.out.print("\nAddress     : " );
-        System.out.print("\nCity        : " );
+        System.out.print("\nFirst Name  : ");
+        System.out.print("\nLast Name   : ");
+        System.out.print("\nAddress     : ");
+        System.out.print("\nCity        : ");
         System.out.print("\nState       : ");
-        System.out.print("\nPone Number : " );
-        System.out.print("\nE-mail      : " );
-        System.out.print("\nZip         : " );
-
+        System.out.print("\nPone Number : ");
+        System.out.print("\nE-mail      : ");
+        System.out.print("\nZip         : ");
     }
-}
+
+
+        public static void addContacts() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Add Multiples Contacts Press 1 for Yes or Press 2 for No");
+            int multipleContact = scanner.nextInt();
+            if (multipleContact == 1) {
+                AddressBook addmultipleContact = new AddressBook();
+                addmultipleContact.contactDetail();
+            } else {
+                System.out.println("Thank You");
+            }
+        }
+    }
+
+
 
