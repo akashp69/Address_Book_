@@ -12,8 +12,8 @@ public class Contacts {
     private String state;
     private int zip;
     private long phonenumber;
-
-    public String getFirstname() {
+    private String email;
+    public String getFirsttname() {
 
         return firstname;
     }
@@ -93,5 +93,11 @@ public class Contacts {
         this.email = email;
     }
 
-    private String email;
+
+    @Override
+    public String toString() {
+        return "ContactsDetails [firstname=" + firstname + ", lastname=" + lastname + ", address=" + address + ", city="
+                + city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phonenumber=" + phonenumber
+                + "]";
+    }
 }
