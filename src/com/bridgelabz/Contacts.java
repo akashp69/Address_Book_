@@ -1,10 +1,9 @@
 package com.bridgelabz;
 
-/**
- * Using class For Create Contacts and using Private Keyword And getter&setter for Encapsulation
- */
-
-public class Contacts {
+    /**
+    * Using class For Create Contacts and using Private Keyword And getter&setter for Encapsulation
+    */
+    public class Contacts {
     private String firstname;
     private String lastname;
     private String address;
@@ -104,12 +103,10 @@ public class Contacts {
         this.phonenumber = phoneNumber;
         this.email = email;
     }
-
-
     @Override
     public String toString() {
         return "ContactsDetails [firstname=" + firstname + ", lastname=" + lastname + ", address=" + address + ", city="
                 + city + ", state=" + state + ", email=" + email + ", zip=" + zip + ", phonenumber=" + phonenumber
                 + "]";
     }
-}
+    }
