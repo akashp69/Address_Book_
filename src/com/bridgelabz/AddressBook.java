@@ -1,22 +1,21 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
-
         /**
-        * This Class  is Created Using For the add multiple AddressBooks
+        * @author Akash Pakhare
         */
         public class AddressBook {
         /**
-        * ability to manage the contact details
+        *This class is Created for  Add Contacts Details, Delete Contacts Details, show  Contacts Details and  Search  the contact details
         */
         Scanner scanner = new Scanner(System.in);
         Contacts personDetails = new Contacts();
-        ArrayList<Contacts> listOfContacts = new ArrayList<>();
+        AddressBookRegex regex = new AddressBookRegex();
+        List<Contacts> listOfContacts = new ArrayList<>();
         public void addContactDetails() {
-        System.out.print("Enter First Name of Person = ");
-        String firstName = scanner.next();
+                String firstName = regex.validFirstName();
         boolean status = false;
         for (Contacts contactDetails : listOfContacts) {
         if (contactDetails.getFirsttname().equals(firstName) == true) {
@@ -29,20 +28,13 @@ import java.util.Scanner;
         addContactDetails();
         } else {
         personDetails.setFirstname(firstName);
-        System.out.print("Enter the Last Name = ");
-        personDetails.setLastname(scanner.next());
-        System.out.print("Enter the Address  = ");
-        personDetails.setAddress(scanner.next());
-        System.out.print("Enter the City Name = ");
-        personDetails.setCity(scanner.next());
-        System.out.print("Enter the State Name = ");
-        personDetails.setState(scanner.next());
-        System.out.print("Enter the Zip Code  = ");
-        personDetails.setZip(scanner.next());
-        System.out.print("Enter the Phone Number =");
-        personDetails.setPhonenumber(scanner.next());
-        System.out.print("Enter the Email id = ");
-        personDetails.setEmail(scanner.next());
+        personDetails.setLastname(regex.validLastName());
+        personDetails.setAddress(regex.validAddress());
+        personDetails.setCity(regex.validCity());
+        personDetails.setState(regex.validState());
+        personDetails.setZip(regex.validZip());
+        personDetails.setPhonenumber(regex.validMobileNumber());
+        personDetails.setEmail(regex.valid_email());
         Contacts contact1 = new Contacts(personDetails.getFirsttname(), personDetails.getLastname(), personDetails.getAddress(), personDetails.getCity(), personDetails.getState(), personDetails.getZip(), personDetails.getPhonenumber(),personDetails.getEmail());
         listOfContacts.add(contact1);
         }
@@ -56,6 +48,9 @@ import java.util.Scanner;
         }
         }
         public void editContact() {
+        /**
+        *This Method is Used for editing the  contact details of Existing Person Name
+        */
         System.out.print("Enter first name : ");
         String firstName = scanner.next();
         int number = 0;
@@ -74,7 +69,10 @@ import java.util.Scanner;
         }
         }
         public void deleteContact() {
-        System.out.print("Enter first name : ");
+        /**
+        *This Method is Used for Delete the  contact details of persons by firstname
+        */
+        System.out.print("Enter first name = ");
         String firstName =scanner.next();
         int number = 0;
         for (Contacts details : listOfContacts) {

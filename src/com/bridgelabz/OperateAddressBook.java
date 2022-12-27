@@ -1,23 +1,24 @@
 package com.bridgelabz;
 
-import java.util.ArrayList;
+import java.util.*;
+
 import java.util.Scanner;
         /**
         * Create class to manage the contact details firstname,lastname , phoneNumber,mail,city,state and zip
         */
         public class OperateAddressBook {
-        public ArrayList arrangeContactDetails() {
+        public List arrangeContactDetails() {
         AddressBook book = new AddressBook();
         int option;
         do {
         System.out.println("*******Welcome to Address Book System*********");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1.Add contact details  \n2.print contact details  \n3.Edit contact details  \n4.Delete contact details");
+        System.out.println("1.Add Contact Details  \n2.Show Contact Details  \n3.Edit Contact Details  \n4.Delete Contact Details");
         System.out.print("Please Select a option = ");
         option = scanner.nextInt();
         switch (option) {
         case 1:
-        System.out.print("Enter how many Persons Contacts details add = ");
+        System.out.print("Enter How Many Persons Contacts Details Would Be You Like To Add = ");
         int number = scanner.nextInt();
         for (int i = 1; i <= number; i++) {
         System.out.println("Enter " + i + " contact details = ");
