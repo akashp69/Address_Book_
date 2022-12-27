@@ -44,5 +44,4 @@ import java.util.Scanner;
         while (option == 1);
         return book.listOfContacts;
         }
-
-}
+        }
