@@ -18,7 +18,7 @@ import java.util.Scanner;
         option = scanner.nextInt();
         switch (option) {
         case 1:
-        System.out.print("Enter How Many Persons Contacts Details Would Be You Like To Add = ");
+        System.out.print("Enter How Many Persons Contacts Details Would  You Like To Add = ");
         int number = scanner.nextInt();
         for (int i = 1; i <= number; i++) {
         System.out.println("Enter " + i + " contact details = ");

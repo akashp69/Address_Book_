@@ -83,7 +83,7 @@ import java.util.Scanner;
         }
         }
         if (number == 0) {
-        System.out.println(firstName + " Contact list not found");
+        System.out.println(firstName + " Contact Not Found");
         } else {
         System.out.println("Delete " + firstName + " contact details");
         }

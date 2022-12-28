@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
     System.out.println(firstName + " is Valid First Name");
     } else {
     System.out.println(firstName + " is Not Valid First Name ! Please Enter Valid First Name ");
-    validFirstName();
+    firstName=validFirstName();
     }
     return firstName;
     }
