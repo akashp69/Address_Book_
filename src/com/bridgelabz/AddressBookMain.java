@@ -40,12 +40,13 @@ import java.util.stream.Collectors;
      System.out.println(books);
      System.out.println("1.Search Contact Details Of Person By City Name ");
      System.out.println("2.Search Contact Details Of Person By State Name ");
-     System.out.println("3.Getting Contacts in Sorted Order");
-     System.out.println("4.Exit");
+     System.out.println("3.Getting Contacts in Sorted Order By Person Name");
+     System.out.println("4.Getting Contacts in Sorted Order By City ,State or Zip Code");
+     System.out.println("5.Exit");
      System.out.println();
      System.out.print("Enter Your Choice = ");
      int option = scanner.nextInt();
-     while (option != 4) {
+     while (option != 5) {
      switch (option) {
      case 1:
      System.out.print("Enter City Name for Searching the Contact Details = ");
@@ -84,6 +85,25 @@ import java.util.stream.Collectors;
      }
      List<Contacts> sortedList = contactList.stream().sorted(Comparator.comparing(Contacts::getFirsttname)).collect(Collectors.toList());
      System.out.println(sortedList);
+     break;
+     case 4:
+     List<Contacts> contactCityList = new ArrayList<>();
+     for (List contact : books.values()) {
+     List<Contacts> list = contact;
+     /**
+     *Here Using Stream Api For Getting the person by sorted Order by State name, city Name or Zip Code
+     */
+     list.stream().forEach(c -> contactCityList.add(c));
+     }
+     System.out.println("Sorted order by state Name = ");
+     List<Contacts> stateList = contactCityList.stream().sorted(Comparator.comparing(Contacts::getState)).collect(Collectors.toList());
+     System.out.println(stateList);
+     System.out.println("Sorted order by city Name = ");
+     List<Contacts> cityList = contactCityList.stream().sorted(Comparator.comparing(Contacts::getCity)).collect(Collectors.toList());
+     System.out.println(cityList);
+     System.out.println("Sorted order by zip code = ");
+     List<Contacts> zipList = cityList.stream().sorted(Comparator.comparing(Contacts::getZip)).collect(Collectors.toList());
+     System.out.println(zipList);
      break;
      default:
      System.out.println("Please Enter Valid Choice ! ");
