@@ -1,10 +1,9 @@
 package com.bridgelabz;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
-     /**
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
      * @author Akash Pakhare
      */
      public class AddressBookMain {
@@ -41,11 +40,12 @@ import java.util.Scanner;
      System.out.println(books);
      System.out.println("1.Search Contact Details Of Person By City Name ");
      System.out.println("2.Search Contact Details Of Person By State Name ");
-     System.out.println("3.Exit");
+     System.out.println("3.Getting Contacts in Sorted Order");
+     System.out.println("4.Exit");
      System.out.println();
      System.out.print("Enter Your Choice = ");
      int option = scanner.nextInt();
-     while (option != 3) {
+     while (option != 4) {
      switch (option) {
      case 1:
      System.out.print("Enter City Name for Searching the Contact Details = ");
@@ -73,12 +73,24 @@ import java.util.Scanner;
      }
      System.out.println("Number of persons in state : " + listSizeInState.size());
      break;
+     case 3:
+     List<Contacts> contactList = new ArrayList<>();
+     for (List contact : books.values()) {
+     List<Contacts> list = contact;
+     /**
+     *Here Using Stream Api For Getting the Contact Details of person by sorted Order
+     */
+     list.stream().forEach(s -> contactList.add(s));
+     }
+     List<Contacts> sortedList = contactList.stream().sorted(Comparator.comparing(Contacts::getFirsttname)).collect(Collectors.toList());
+     System.out.println(sortedList);
+     break;
      default:
      System.out.println("Please Enter Valid Choice ! ");
      }
      System.out.println("1.Search Contact Details Of Person By City Name ");
      System.out.println("2.Search Contact Details Of Person By State Name ");
-     System.out.println("3.Exit");
+     System.out.println("4.Exit");
      System.out.print("Enter Your Choice = ");
      option =scanner.nextInt();
      }
