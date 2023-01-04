@@ -1,7 +1,7 @@
 package com.bridgelabz;
 
     /**
-    * Using class For Create Contacts and using Private Keyword And getter&setter for Encapsulation
+    * Using class For Create Contacts and using Private Keyword , getter&setter and also using toString Method in this class
     */
     public class Contacts {
     private String firstname;
